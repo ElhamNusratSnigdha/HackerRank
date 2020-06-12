@@ -1,6 +1,14 @@
 import java.util.*;
 public class practice {
 
+    /*************************Beginner Task9*************************/
+    public static void howBigIsMyNumber(int k){
+        if (k>=0&&k<=10){
+            System.out.println("Our number is preety small");
+        }else if (k>=11&&k<=100){
+            System.out.println("Our number is preety big");
+        }else System.out.println("Our number is out of range");
+    }
     /*************************Beginner Task8*************************/
     public String tossACoin(){
         Random rand = new Random();
@@ -56,15 +64,37 @@ public class practice {
         System.out.println(numberOfPeopleInCar);
     }
 
+    //Getter & Setter
+    public int getMaxSpeed(){
+        return this.maxSpeed;
+    }
+    public void setMaxSpeed(int newMaxSpeed){
+        this.maxSpeed = newMaxSpeed;
+    }
+    public int getMinSpeed(){
+        return this.minSpeed;
+    }
+    public double getWeight(){
+        return this.weight;
+    }
+    public boolean getIsTheCarOn(){
+        return this.isItOn;
+    }
+
     public void wreckCar(){
         condition = 'C';
     }
 
+    /*
     public void upgradeSpeed(){
         //these are primitive data type/independent
         minSpeed = maxSpeed;
         maxSpeed = maxSpeed + 50;
         condition = 'A';
+    }*/
+
+    public void upgradeSpeed(){
+        setMaxSpeed(getMaxSpeed()+10);
     }
 
     public void getIn(){
@@ -113,6 +143,15 @@ public class practice {
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
+
+
+        /*************************Beginner Task9*************************/
+        System.out.println("Find out how much big the numbers are!");
+        howBigIsMyNumber(8);
+        howBigIsMyNumber(100);
+        howBigIsMyNumber(-5);
+        howBigIsMyNumber(200);
+        System.out.println();
 
         /*************************Beginner Task8*************************/
         System.out.println("Task-8 [A Coin Toss Game]");
