@@ -25,10 +25,6 @@ public class Day3 {
             }
             scanner.close();
 
-    /* Result:
-        Hello, World.
-        Welcome to 30 Days of Code!
-         */
 
         /* Extra Materials:
         #Boolean          : A logical statement that evaluates to true or false. In some languages, true is
