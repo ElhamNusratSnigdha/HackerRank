@@ -1,6 +1,24 @@
 import java.util.*;
 public class practice {
 
+    /*************************Beginner Task8*************************/
+    public String tossACoin(){
+        Random rand = new Random();
+        int toss = Math.abs(rand.nextInt())%2;
+        if (toss==0){
+            return "Heads";
+        }
+        else{
+            return "Tails";
+        }
+    }
+    /* public int tossACoin(){
+        Random rand = new Random();
+        int toss = Math.abs(rand.nextInt())%2;
+        return toss; //returns 1/0
+    } */
+
+
     /*************************Beginner Task7*************************/
     //instance variables below
     int maxSpeed = 100;
@@ -15,6 +33,8 @@ public class practice {
     double mpg = 26.4; //mass per gallon(mpg)
 
     int numberOfPeopleInCar = 1;
+
+    int maxNumberOfPeopleInCar = 6;
 
     public practice(){
 
@@ -48,25 +68,64 @@ public class practice {
     }
 
     public void getIn(){
-        numberOfPeopleInCar++;
-        //numberOfPeopleInCar = numberOfPeopleInCar+1;
+        if(numberOfPeopleInCar<maxNumberOfPeopleInCar) {
+            numberOfPeopleInCar++;
+            //numberOfPeopleInCar = numberOfPeopleInCar+1;
+            System.out.println("Someone get in");
+        }
+        else{
+            System.out.println("The car is full");
+        }
     }
 
     public void getOut(){
-        numberOfPeopleInCar--;
-        //numberOfPeopleInCar = numberOfPeopleInCar-1;
+        if(numberOfPeopleInCar>0){
+            numberOfPeopleInCar--;
+            //numberOfPeopleInCar = numberOfPeopleInCar-1;
+        }
+        System.out.println(numberOfPeopleInCar);
     }
 
     public double howManyMilesTillOutOfGas(){
         return currentFuel*mpg;
     }
 
-    public double maxMilesPerFillUp(){
-        return maxFuel/mpg;
+    public double maxMilesPerFillUp(){ return maxFuel/mpg; }
+
+    public void turnTheCarOn(){
+        if(!isItOn){
+            isItOn = true;
+        }
+        else{
+            System.out.println("The car is already on");
+        }
+        /*
+        if(isItOn==false){
+            isItOn = true;
+        }
+        if(isItOn) {
+            isItOn = false;
+        }
+        else{
+            isItOn = true;
+        }*/
     }
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
+
+        /*************************Beginner Task8*************************/
+        System.out.println("Task-8 [A Coin Toss Game]");
+        practice game = new practice();
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println(game.tossACoin());
+        System.out.println();
 
         /*************************Beginner Task7*************************/
 
@@ -114,6 +173,20 @@ public class practice {
         System.out.println("Part3");
         finalCar.printVariables();
 
+        System.out.println();
+        System.out.println("IFCar:");
+        practice ifCar = new practice();
+        ifCar.getOut();
+        ifCar.getOut();
+        ifCar.getIn();
+        ifCar.getIn();
+        ifCar.getIn();
+        ifCar.getIn();
+        ifCar.getIn();
+        ifCar.getIn();
+        ifCar.getIn();
+        ifCar.turnTheCarOn();
+        ifCar.turnTheCarOn();
         System.out.println();
         /************************Beginner Task1*************************/
 
