@@ -2,12 +2,29 @@ import java.util.*;
 public class practice {
 
     /*************************Beginner Task7*************************/
+    //instance variables below
     int maxSpeed = 100;
     int minSpeed =0;
-    double weight = 4.079;
+    double weight = 4079;
     boolean isItOn = false;
     char condition = 'A';
     String carName = "Suzy";
+
+    double maxFuel = 16;
+    double currentFuel = 8;
+    double mpg = 26.4; //mass per gallon(mpg)
+
+    int numberOfPeopleInCar = 1;
+
+    public practice(){
+
+    }
+
+    public practice(int customMaxSpeed, double customWeight, boolean customIsTheCarOn){
+        maxSpeed = customMaxSpeed;
+        weight = customWeight;
+        isItOn = customIsTheCarOn;
+    }
 
     public void printVariables(){
         System.out.println(maxSpeed);
@@ -16,6 +33,7 @@ public class practice {
         System.out.println(isItOn);
         System.out.println(condition);
         System.out.println(carName);
+        System.out.println(numberOfPeopleInCar);
     }
 
     public void wreckCar(){
@@ -29,9 +47,74 @@ public class practice {
         condition = 'A';
     }
 
+    public void getIn(){
+        numberOfPeopleInCar++;
+        //numberOfPeopleInCar = numberOfPeopleInCar+1;
+    }
+
+    public void getOut(){
+        numberOfPeopleInCar--;
+        //numberOfPeopleInCar = numberOfPeopleInCar-1;
+    }
+
+    public double howManyMilesTillOutOfGas(){
+        return currentFuel*mpg;
+    }
+
+    public double maxMilesPerFillUp(){
+        return maxFuel/mpg;
+    }
+
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
 
+        /*************************Beginner Task7*************************/
+
+        System.out.println("Task-7 [Objects and Methods]");
+        practice familyCar = new practice(); //[creating an object of practice]
+        System.out.println("Family Car's information :");
+        familyCar.printVariables();
+        /*reference data type/dependent aliceCar
+        More examples of Referenced Types: Arrays, Queues, Linked lists, Stacks
+        */
+        practice aliceCar = familyCar;
+        familyCar.wreckCar();
+        System.out.println("Alice Car's information: ");
+        aliceCar.printVariables();
+        //primitive data type minSpeed & maxSpeed
+        aliceCar.upgradeSpeed();
+        System.out.println("Upgrated Alice Car's information: ");
+        aliceCar.printVariables();
+
+        System.out.println("Custom Car: ");
+        practice birthdayPresent = new practice(500,5000.545,true);
+        birthdayPresent.printVariables();
+
+        System.out.println("Christmas Present:");
+        practice christmasPresent = new practice(550,2000,false);
+        christmasPresent.printVariables();
+
+        System.out.println();
+        System.out.println("Final Custom Car:");
+        practice finalCar = new practice();
+        System.out.println();
+        System.out.println("Part1");
+        finalCar.printVariables();
+        finalCar.getIn();
+        finalCar.getIn();
+        finalCar.getIn();
+        System.out.println("Miles left: " + finalCar.howManyMilesTillOutOfGas());
+        System.out.println("Max miles: "+finalCar.maxMilesPerFillUp());
+        System.out.println();
+        System.out.println("Part2");
+        finalCar.printVariables();
+        finalCar.getOut();
+        finalCar.getOut();
+        System.out.println();
+        System.out.println("Part3");
+        finalCar.printVariables();
+
+        System.out.println();
         /************************Beginner Task1*************************/
 
         System.out.println("Task-1 [sum of two numbers]");
@@ -158,23 +241,6 @@ public class practice {
         }
 
         System.out.println();
-        /*************************Beginner Task7*************************/
-
-        System.out.println("Task-7 [Objects and Methods]");
-        practice familyCar = new practice(); //[creating an object of practice]
-        System.out.println("Family Car's information :");
-        familyCar.printVariables();
-        /*reference data type/dependent aliceCar
-        More examples of Referenced Types: Arrays, Queues, Linked lists, Stacks
-        */
-        practice aliceCar = familyCar;
-        familyCar.wreckCar();
-        System.out.println("Alice Car's information: ");
-        aliceCar.printVariables();
-        //primitive data type minSpeed & maxSpeed
-        aliceCar.upgradeSpeed();
-        System.out.println("Upgrated Alice Car's information: ");
-        aliceCar.printVariables();
 
         s.close();
     }
