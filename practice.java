@@ -1,6 +1,46 @@
 import java.util.*;
 public class practice {
 
+    /*************************Beginner Task10*************************/
+    public static void practiceWhileLoop(){
+        int x = 0;
+        while (x<5){
+            System.out.println("The value of x is "+x);
+            x++;
+        }
+    }
+
+    public static void practiceDoWhileLoop(){
+        int x = 0;
+        do {
+            System.out.println("The value of x is "+x);
+            x++;
+        }while (x<5);
+    }
+    public static void practiceForLoop(){
+        System.out.println("Normal 'For' Loop");
+        for(int x=0;x<5;x++){
+            System.out.println("The value of x is "+x);
+        }
+        System.out.println();
+        System.out.println("Nested 'For' Loop");
+        for (int i=0;i<6;i++){
+            for (int j=0;j<3;j++){
+                System.out.println("The value of i is: "+i+" & "+"The value of j is: "+j);
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println("Reverse 'For' Loop");
+        for (int z=10;z>0;z--){
+            System.out.println("The value of z is "+z);
+            if(z==5){
+                System.out.println("broke");
+                break;
+            }
+        }
+    }
+
     /*************************Beginner Task9*************************/
     public static void howBigIsMyNumber(int k){
         if (k>=0&&k<=10){
@@ -144,9 +184,19 @@ public class practice {
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
 
+        /*************************Beginner Task10*************************/
+        System.out.println("Task-10 [Practice 'While' Loop]");
+        practiceWhileLoop();
+        System.out.println();
+        System.out.println("Task-10 [Practice 'Do-while' Loop]");
+        practiceDoWhileLoop();
+        System.out.println();
+        System.out.println("Task-10 [Practice 'For' Loop]");
+        practiceForLoop();
+        System.out.println();
 
         /*************************Beginner Task9*************************/
-        System.out.println("Find out how much big the numbers are!");
+        System.out.println("Task-9 [Find out how much big the numbers are!]");
         howBigIsMyNumber(8);
         howBigIsMyNumber(100);
         howBigIsMyNumber(-5);
