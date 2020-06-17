@@ -1,6 +1,41 @@
 import java.util.*;
+
 public class practice {
 
+    public static void tellMeYourBinaryNumber(int[] decimalArray, int aEnds){
+        //work 3
+    }
+    /*************************Beginner Task13*************************/
+    public static void twosComplement(){
+//        working 2
+    }
+    /*************************Beginner Task12*************************/
+    public static void tellMeYourDecimalNumber(int[] binaryArray,int aEnds){
+        Recursion r = new Recursion();
+        int n = aEnds-1;
+        for(int i=0;i<=n;i++){
+            int m = binaryArray[i];
+//still working 1
+        }
+        r.Exponentiation(2,n);
+    }
+    /*************************Beginner Task11*************************/
+    public static void addingBinary(int n1,int n2){
+        if(n1==0&&n2==0){
+            System.out.println("Binary Addition: 0+0=0");
+        }
+        else if(n1==0&&n2==1){
+            System.out.println("Binary Addition: 0+1=1");
+        }
+        else if(n1==1&&n2==0){
+            System.out.println("Binary Addition: 1+0=1");
+        }
+        else if(n1==1&&n2==1){
+            System.out.println("Binary Addition: 1+1=1");
+        }
+        //1+1+1=1 reminder 1 here
+        else System.out.println("Enter Binary Numbers Only :')");
+    }
     /*************************Beginner Task10*************************/
     public static void practiceWhileLoop(){
         int x = 0;
@@ -183,6 +218,32 @@ public class practice {
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
+
+        /*************************Beginner Task12*************************/
+        System.out.println("Task-12 [Converting Base2 to Base10/Binary to Decimal]");
+        int[] binaryArray = new int[32];
+        System.out.println("How many bits do you want to add?");
+        int nB = s.nextInt();
+        System.out.println("Enter your binary number right to left");
+        for (int i=0;i<nB;i++){
+            System.out.println("Enter your Binary digit index number "+i);
+            binaryArray[i]=s.nextInt();
+        }
+        /*if your want to enter left to right*/
+        /*
+        int[] reverseBA = new int[nB];
+        for(int j=nB-1;j>=0;j--){
+            reverseBA[j]=binaryArray[nB-1-j];
+        }
+        System.out.println("Array 12" + Arrays.toString(reverseBA));
+         */
+        tellMeYourDecimalNumber(binaryArray,nB);
+        System.out.println();
+
+        /*************************Beginner Task11*************************/
+        System.out.println("Task-11 [Binary Addition]");
+        addingBinary(0,1);
+        System.out.println();
 
         /*************************Beginner Task10*************************/
         System.out.println("Task-10 [Practice 'While' Loop]");
