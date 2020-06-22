@@ -11,16 +11,27 @@ public class Day10 {
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         String bin = Integer.toBinaryString(n);
-        System.out.println(bin);
-        int count=0;
-
+        int one=0;
+        int[] current= new int[10];
+        int j=0;
         for(int i=0;i<bin.length();i++){
-            if(bin.charAt(i)=='0'){
-                count++;
+            if(bin.charAt(i)=='1'){
+                one++;
+            }else{
+                one=0;
+            }
+
+            if(current[j]<one){
+                current[j]=one;
             }
         }
-
-        System.out.println(count+1);
+        int max=0;
+        for (int i=0;i<current.length;i++){
+            if (current[i]>max){
+                max=current[i];
+            }
+        }
+        System.out.println(max);
         scanner.close();
         /* Extra Materials:
         #Radix (Base)     : The number of digits that can be used to represent a number in a positional number system is "Base".
