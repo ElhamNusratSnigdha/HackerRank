@@ -1,6 +1,41 @@
+import java.util.Scanner;
 public class Day11 {
+    private static final Scanner scanner = new Scanner(System.in);
+    public static int getHourglassSum(int[][] matrix,int row,int column){
+        int sum=0;
+        sum += matrix[row-1][column-1];
+        sum += matrix[row-1][column];
+        sum += matrix[row-1][column+1];
+        sum += matrix[row][column];
+        sum += matrix[row+1][column-1];
+        sum += matrix[row+1][column];
+        sum += matrix[row+1][column+1];
+        return sum;
+    }
     public static void main(String[] args) {
+        int[][] arr = new int[6][6];
 
+        for (int i = 0; i < 6; i++) {
+            String[] arrRowItems = scanner.nextLine().split(" ");
+            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+            for (int j = 0; j < 6; j++) {
+                int arrItem = Integer.parseInt(arrRowItems[j]);
+                arr[i][j] = arrItem;
+            }
+        }
+        int currentHourGlassSum=0;
+        int maxHourglassSum=-63;
+        for(int i=1;i<5;i++){
+            for(int j=1;j<5;j++){
+                currentHourGlassSum=getHourglassSum(arr,i,j);
+                if(currentHourGlassSum>maxHourglassSum){
+                    maxHourglassSum=currentHourGlassSum;
+                }
+            }
+        }
+        System.out.println(maxHourglassSum);
+        
         /* Extra Materials:
         #2D Arrays : known as multidimensional arrays, they are very similar to the regular 1D Array data structure.
                      int rowSize = 2;
